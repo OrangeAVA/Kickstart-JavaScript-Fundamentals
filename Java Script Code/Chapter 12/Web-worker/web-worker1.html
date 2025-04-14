@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Workers Image Processing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Web Workers Image Processing</h1>
+  <p>Upload an image to see the grayscale effect using a Web Worker.</p>
+  <input type="file" id="fileInput" accept="image/*" />
+  <canvas id="canvas"></canvas>
+
+  <script src="main1.js"></script>
+</body>
+</html>

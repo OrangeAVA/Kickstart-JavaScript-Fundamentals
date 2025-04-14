@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Data Caching</title>
+</head>
+<body>
+  <h1>API Data Caching with Local Storage</h1>
+  <div id="content"></div>
+  <script>
+    const cacheKey = 'apiData';
+    const expiryKey = 'cacheExpiry';
+    const cacheDuration = 60 * 60 * 1000; // 1 hour in milliseconds
+
+    const cachedData = localStorage.getItem(cacheKey);
+    const cacheExpiry = localStorage.getItem(expiryKey);
+
+    function renderData(data) {
+      const contentDiv = document.getElementById('content');
+      contentDiv.innerHTML = `
+        <h2>Post Title: ${data.title}</h2>
+        <p>${data.body}</p>
+      `;
+    }
+
+    if (cachedData && cacheExpiry && Date.now() < cacheExpiry) {
+      console.log('Using valid cached data');
+      renderData(JSON.parse(cachedData));
+    } else {
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Fetched and caching data:', data);
+          renderData(data);
+          localStorage.setItem(cacheKey, JSON.stringify(data));
+          localStorage.setItem(expiryKey, Date.now() + cacheDuration);
+        })
+        .catch(error => {
+          console.error('Fetch Error:', error);
+          const contentDiv = document.getElementById('content');
+          contentDiv.innerHTML = '<p style="color: red;">Failed to fetch data. Please try again later.</p>';
+        });
+    }
+  </script>
+</body>
+</html>

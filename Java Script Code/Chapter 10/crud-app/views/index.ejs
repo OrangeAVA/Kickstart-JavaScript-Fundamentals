@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        /* Specific background for addItem page */
+        body {
+            background-image: url('/images/mvc.jpg'); /* Different image for this page */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<h1><center><U>Key-Value List</U></center></h1>
+<a href="/add"><h2>Add New Details</h2></a>
+<ul>
+  <% items.forEach(item => { %>
+    <li>
+      <h5>Key - Value</h5><br></li>
+      <li>
+      <%= item.name %> - <%= item.description %>
+      <a href="/edit/<%= item.id %>">Edit</a>
+      <a href="/delete/<%= item.id %>">Delete</a>
+    </li>
+  <% }) %>
+</ul>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+<link href="styles.css" rel="stylesheet" type="text/css">
+<style>
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+</style>
+<header>
+    <h1>DES Pune University, Pune !</h1> <br>
+<h4>Simple Responsive Webpage</h4>
+</header>
+
+</head>
+<body style="background-color:white;">
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">About</a>
+  <a href="#news">Contact</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">Schools ▼ 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#">Engineering and Technology</a>
+    <a href="#">Science and Mathematics</a>
+    <a href="#">Humanities and Social Sciences</a>
+    <a href="#">Business and Management</a>
+    <a href="#">Design and Art</a>
+  </div>
+  </div> 
+</div>
+
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Click on the "Dropdown" link to see the dropdown menu.</p>
+<section>
+    <h2><center>Welcome to Our Website!</center></h2>
+    
+</section>
+<section>
+    <h2>About Us</h2>
+    <p><h3>Hello!! Welcome to DES PU, Pune University !!! 
+      <br> Become a part of the 139 years legacy!!</h3></p>
+</section>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
+<footer>
+    <p>Copyright © 2024 DES, Pune University</p>
+</footer>
+
+</body>
+</html>

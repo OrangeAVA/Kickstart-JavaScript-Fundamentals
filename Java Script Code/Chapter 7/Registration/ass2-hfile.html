@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="ass2-cfile.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+        <!-- Full Name -->
+        <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" class="form-control" required>
+        </div>
+        <div class="form-group">
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+        <br>
+    </div>
+    <div class="form-group">
+        <!-- Phone -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" class="form-control" required>
+        <small>Format: 1234567890</small>
+        <br>
+</div>
+        <!-- Password -->
+        <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+        <br>
+        </div>
+        <!-- Confirm Password -->
+        <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+        <br>
+        </div>
+        <!-- Gender -->
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="gender-options">
+              <input type="radio" id="male" name="gender" value="male" class="form-control" required>
+              <label for="male">Male</label>
+          
+              <input type="radio" id="female" name="gender" value="female" class="form-control" required>
+              <label for="female">Female</label>
+          
+              <input type="radio" id="other" name="gender" value="other" class="form-control" required>
+              <label for="other">Other</label>
+            </div>
+          </div>        
+        <!-- Country -->
+        <div class="form-group">
+        <label for="country">Country:</label>
+        <select id="country" name="country"  class="form-control" required>
+            <option value="">Select Country</option>
+			<option value="India">India</option>
+            <option value="usa">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+			<option value="Japan">Japan</option>
+			<option value="china">China</option>
+            <!-- Add more countries as needed -->
+        </select>
+        <br>
+        </div>
+        <!-- Date of Birth -->
+        <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" class="form-control" required>
+        <br>
+</div>
+<div class="form-group">       
+<!-- Profile Picture -->
+        <label for="profilePicture">Profile Picture:</label>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" class="form-control">
+        <br>
+</div>
+        <!-- Image Preview -->
+        <div class="form-group">
+        <img id="imagePreview" src="" alt="Image Preview" style="display:none; max-width: 200px;" class="form-control">
+       
+</div>
+<div class="form-group">      
+<!-- Age Range -->
+        <label for="ageRange">Age Range:</label>
+        <input type="range" id="ageRange" name="ageRange" min="0" max="100" value="25" class="form-control">
+        <span id="ageValue">25</span>
+        <br>
+</div>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+    <!-- Display Information Section -->
+    <h2>Submitted Information:</h2>
+    <div id="infoDisplay"></div>
+
+    <script src="ass2-jfile.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* Apply a background image to the entire body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-image: url('/images/background.jpg'); /* Add your image path here */
+  background-size: cover; /* Make the image cover the entire page */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Style the main heading */
+h1 {
+  color: yellow; /* White color for better contrast on background */
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+}
+
+/* Style the item list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:x-large;
+  color: white; /* White text to stand out against background */
+}
+
+ul li a
+{
+  color: chartreuse;
+  font-size: x-large;
+}
+/* Style the forms */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto; /* Center the form */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 10px;
+}
+
+form input, form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}

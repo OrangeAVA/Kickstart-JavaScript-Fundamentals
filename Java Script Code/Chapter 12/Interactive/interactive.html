@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Drawing Canvas</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    canvas {
+      border: 2px solid #000;
+      background-color: #fff;
+      cursor: crosshair;
+    }
+    .toolbar {
+      margin-bottom: 10px;
+    }
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎨 Interactive Drawing Canvas</h1>
+
+  <div class="toolbar">
+    <label>Color: <input type="color" id="colorPicker"></label>
+    <label>Line Width: <input type="range" id="lineWidth" min="1" max="10" value="2"></label>
+    <button id="eraseBtn">Eraser</button>
+    <button id="clearBtn">Clear</button>
+    <button id="saveBtn">Save</button>
+  </div>
+
+  <canvas id="interactiveCanvas" width="800" height="400"></canvas>
+
+  <script src="in_script.js"></script>
+
+</body>
+</html>

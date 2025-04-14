@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Data Rendering</title>
+  <style>
+    .user {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .user h3 {
+      margin: 0 0 5px;
+    }
+    .user p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic User List</h1>
+  <div id="user-container"></div>
+  <script>
+    const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+    function renderUsers(users) {
+      const container = document.getElementById('user-container');
+      container.innerHTML = users.map(user => `
+        <div class="user">
+          <h3>${user.name}</h3>
+          <p>Email: ${user.email}</p>
+          <p>Phone: ${user.phone}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderError(message) {
+      const container = document.getElementById('user-container');
+      container.innerHTML = `<p style="color: red;">Error: ${message}</p>`;
+    }
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        renderUsers(data);
+      })
+      .catch(error => {
+        renderError(error.message);
+      });
+  </script>
+</body>
+</html>

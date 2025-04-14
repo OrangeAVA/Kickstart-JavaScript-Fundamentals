@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Library Integration Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <script>
+        $(document).ready(function() {
+            $('#btn').click(() => alert("Hello, jQuery!"));
+        });
+        console.log(_.chunk([1, 2, 3, 4, 5], 2)); // Lodash chunking function
+    </script>
+</body>
+</html>
